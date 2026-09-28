@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="es"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#08132d">
+<title>Cena Bailable · Generación 9no 2026</title>
+<meta name="description" content="Cena Bailable Generación 9no 2026 · Colegio Bilingüe Jorge Volio J.">
+<style>
+:root{color-scheme:dark}*{box-sizing:border-box}body{margin:0;background:#071329;color:white;font-family:system-ui,-apple-system,Segoe UI,sans-serif}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;background:radial-gradient(ellipse at 12% 20%,#1165c44d,transparent 52%),radial-gradient(ellipse at 90% 80%,#e7b52b25,transparent 42%)}
+main{position:relative;min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px 16px 70px;text-align:center}
+#intro{max-width:480px}.eyebrow{letter-spacing:.23em;font-weight:800;color:#f9cb44;font-size:.76rem}h1{font-size:clamp(2.3rem,9vw,4rem);line-height:1.06;margin:18px 0 12px;text-transform:uppercase}h1 span{color:#f8c643}p{line-height:1.55;color:#d5e5ff}
+button,.link{display:inline-block;border:0;border-radius:100px;padding:16px 25px;background:#ffd047;color:#08132d;font-weight:900;font-size:1rem;text-decoration:none;cursor:pointer;margin:14px 6px}
+button:focus-visible,.link:focus-visible{outline:3px solid white;outline-offset:4px}
+#experience{display:none;width:100%;max-width:640px;animation:appear .7s ease both}
+#experience.show{display:block}#intro.hide{display:none}
+img{width:100%;height:auto;display:block;border-radius:14px;box-shadow:0 12px 45px #0008}
+.actions{margin:20px auto}.secondary{background:transparent;border:2px solid #f9ca46;color:#f9ca46}
+small{color:#c1cde0;display:block;margin-top:15px}footer{font-size:.8rem;color:#a9b7cc;margin-top:28px}
+@keyframes appear{from{opacity:0;transform:translateY(15px)}to{opacity:1;transform:translateY(0)}}
+@media(prefers-reduced-motion:reduce){#experience{animation:none}}
+</style></head>
+<body><main>
+<section id="intro"><div class="eyebrow">COLEGIO BILINGÜE JORGE VOLIO J.</div>
+<h1>GENERACIÓN<br><span>9NO 2026</span></h1>
+<p>¡Estás invitado a nuestra cena bailable!<br>Una noche para recordar.</p>
+<button id="open" type="button">♫ ABRIR INVITACIÓN</button>
+<small>Al abrir se intentará reproducir música.</small></section>
+<section id="experience" aria-label="Invitación a la cena bailable">
+<img src="invitacion.jpg" alt="Invitación Cena Bailable Generación 9no 2026. Sábado 24 de octubre, Pueblo Antiguo - Parque de Diversiones, Salón San Juan de Dios, 5:00 PM. Vestimenta no formal.">
+<div class="actions"><button id="toggle" type="button" class="secondary">♫ Pausar música</button></div>
+<p>¡Nos vemos en Pueblo Antiguo!</p>
+<a class="link" href="https://www.google.com/maps/search/?api=1&amp;query=Pueblo+Antiguo+Parque+de+Diversiones+Costa+Rica" target="_blank" rel="noopener noreferrer">Cómo llegar ↗</a>
+</section>
+<footer>Generación 9no · 2026</footer>
+</main>
+<audio id="music" src="musica.mp3" preload="none" loop></audio>
+<script>
+const music=document.getElementById('music');
+const toggle=document.getElementById('toggle');
+document.getElementById('open').addEventListener('click',async()=>{
+document.getElementById('intro').classList.add('hide');
+document.getElementById('experience').classList.add('show');
+try{await music.play();toggle.textContent='♫ Pausar música'}
+catch(e){toggle.textContent='♫ Reproducir música'}
+});
+toggle.addEventListener('click',async()=>{
+if(music.paused){try{await music.play();toggle.textContent='♫ Pausar música'}catch(e){toggle.textContent='♫ Reproducir música'}}
+else{music.pause();toggle.textContent='♫ Reproducir música'}
+});
+</script></body></html>
